@@ -29,7 +29,7 @@ The goal here is to setup the Luckfox pico to automatically try and jailbreak th
 - Luckfox Pico/Pro/Max/Plus/Mini
 - Ethernet Cable
 - USB Type-C for power to the board
-- A USB drive with exFAT32 formatted (only use for the first time to load GoldHEN)
+- A USB drive formatted in exFAT / FAT32  (only use for the first time to load GoldHEN)
 
 ## Support Boards
 
@@ -41,33 +41,42 @@ The goal here is to setup the Luckfox pico to automatically try and jailbreak th
 
 ## Installation Software
 
-1. Download <a href=https://drive.google.com/drive/folders/1sFUWjYpDDisf92q9EwP1Ia7lHgp9PaFS>Ubuntu OS </a> After you download, extract one of the zip files according to your Luckfox Pico models. <br>
-2. Burn the image onto an SD Card. Download <a href=https://drive.google.com/file/d/1ALo4G7rEaF1GNhUHINoYHT_RGWGddzYw>SocToolKit</a> and unzip the burning tool.
-3. Open the software and select your chip type
+1. Download your Firmware <a href=https://drive.google.com/drive/folders/1r6Ulc_crJar1entKbK7GEJSq14HXL8ao>Here</a> 
+After you download, extract one of the zip files according to your Luckfox Pico models. <br>
+
+2. Now Download <a href=https://drive.google.com/file/d/1ALo4G7rEaF1GNhUHINoYHT_RGWGddzYw>SocToolKit</a>, unzip it and open `SocToolKit.exe`.
+
+
+3. Refer to the table below to find out your Chip model
 
 Luckfox Models  | Chip Type
 ------------- | -------------
 Luckfox Pico Pro/Max  | RV1106
 Luckfox Pico/Plus/Mini  | RV1103 
 
-4. Steps to download firmware for Luckfox Pico on Windows: <br>
-  a. Choose the SD card tool.<br>
-  b. The SD card size will be displayed under USB Disk. If not displayed, reinsert the card reader.<br>
+4. Now you need to Flash your SD Card: <br>
+  a. In SocToolKit select **SDtool**.<br>
+  b. Plug your SD card in your Computer and select it in the Usb Disk drop down menu.<br>
   c. Select SD card booting.<br>
-  d. Import the boot file.（Note: The startup files do not include update.img）<br>
-  e. Click "Create SD Card".<br>
+  d. Import all the .img file from the Firmware you Downloaded earlier except the `update.img`.<br>
+  e. Click on "Create SD Card".<br>
 
-5. After done, eject and place the SD card into the Luckfox, power it using USB Type-C, and wait about `5 to 10 min` for luckfox to config the network, then connect it to the internet by plugging the LAN cable into the router <br> 
-6. Loggin to ubuntu:
 
-      log in using SSH: connect Luckfox to the internet via LAN cable, find its IP on your router, and log in via SSH on <a href=https://putty.org>PuTTY</a>
+5. After done, eject your SD card and place it into the Luckfox, power it using USB Type-C, and connect it to the internet by plugging the LAN cable into your router.<br> 
+6. To loggin to your Luckfox:
+
+      You need to log in using SSH: 
+      Normally the Luckfox will setup a static IP that will be : 172.32.0.70
+      Now open cmd and type : ssh pico@172.32.0.70
+
+Login Details :
 
 ```sh
 Login: pico
 Password: luckfox
 ```
 
-7. After you log in, run the following commands and follow the setup instruction
+7. After you log in, run the following commands and follow the setup instruction:
 
 ```sh
 git clone https://github.com/0x1iii1ii/PPPwn-Luckfox.git
@@ -79,16 +88,22 @@ sudo ./install.sh
 Once the Luckfox reboots pppwn will run automatically.<be>
 
 ## Update to the latest version
-Only use this cmd, when you want to update to the latest released version of PPPwn-Luckfox. <br>
-log in to your luckfox, connect it to the internet, paste this cmd, and setup again:
+Only use this command when you want to update to the latest released version of PPPwn-Luckfox.<br>
+
+To update :
+
+Log in to your luckfox with ssh, then run the following commands and follow the setup instruction:
 ```sh
 cd PPPwn-Luckfox
 git pull
 sudo ./install.sh
 ```
 
+When the Luckfox will reboot it will be updated to the last version
+
 ## * Special Note for Luckfox Pico/Mini
-Ignore this if you use Pro/Max/Plus version. For these 2 boards, there's no Ethernet port, to make it work you need to solder the LAN Port (RJ45) cable to it, either female or male is fine, and burn the Ubuntu image with `pico plus image` and follow the same step as other boards. See the wiring in the `Issues` tab.
+Ignore this if you use Pro/Max/Plus version. 
+For these 2 boards, there's no Ethernet port, to make it work you need to solder the LAN Port (RJ45) cable to it, either female or male is fine.
 
 ## Installation Hardware
 
@@ -103,13 +118,13 @@ Ignore this if you use Pro/Max/Plus version. For these 2 boards, there's no Ethe
 - Choose `Automatic` for `DNS Settings` and `MTU Settings`<br>
 - Choose `Do Not Use` for `Proxy Server`<br>
 
-For GoldHen you need to place the goldhen.bin file onto the root of a usb drive and plug it into the console.<br>
-Once goldhen has been loaded for the first time it will be copied to the consoles internal hdd and the usb is no longer required.<br>
-To update goldhen just repeat the above process and the new version will be copied to the internal hdd<br>
+For GoldHen you need to place the `goldhen.bin` file to the root of a USB drive and plug it into the console.<br>
+Once Goldhen has been loaded for the first time it will be copied to the consoles internal HDD and the USB drive is no longer required.<br>
+To update Goldhen just repeat the above process, and the new version will be copied to the internal HDD<br>
 
 ## Upcoming alternative method using NAND flash
 
-- no SD card
-- boot faster
-- execute pppwn faster
-- higher success rate
+- No SD card
+- Faster Boot time
+- Faster PPPwn execution
+- Higher success rate

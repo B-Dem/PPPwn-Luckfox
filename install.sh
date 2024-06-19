@@ -1,43 +1,46 @@
 #!/bin/bash
 
-echo "______________________________                       "
-echo "\\______   \\______   \\______   \\__  _  ______  "
-echo " |     ___/|     ___/|     ___/\\ \\/ \\/ /    \\ "
-echo " |    |    |    |    |    |     \\     /   |  \\     "
-echo " |____|    |____|    |____|      \\/\\_/|___|  /    "
-echo "                                           \\/       "
-echo " __                 __      _____                    " 
-echo "|  |  __ __   ____ |  | ___/ ____\\_______  ___      "
-echo "|  | |  |  \\_/ ___\\|  |/ /\\   __\\/  _ \\  \\/  / "
-echo "|  |_|  |  /\\  \\___|    <  |  | (  <_> >    <      "
-echo "|____/____/  \\_____>__|_ \\ |__|  \\____/__/\\_ \\  "
-echo ""
+echo "__________________                  "
+echo "| ___ \ ___ \ ___ \                 "
+echo "| |_/ / |_/ / |_/ /_      ___ __    "
+echo "|  __/|  __/|  __/\ \ /\ / / '_ \   "
+echo "| |   | |   | |    \ V  V /| | | |  "
+echo "\_|   \_|   \_|     \_/\_/ |_| |_|  "
+echo "                                    " 
+echo " _                _     __          "
+echo "| |              | |   / _|         "
+echo "| |    _   _  ___| | _| |_ _____  __"
+echo "| |   | | | |/ __| |/ /  _/ _ \ \/ /"
+echo "| |___| |_| | (__|   <| || (_) >  < "
+echo "\_____/\__,_|\___|_|\_\_| \___/_/\_\ "
 
-echo "by: https://github.com/0x1iii1ii/PPPwn-Luckfox"
+echo "By: https://github.com/0x1iii1ii/PPPwn-Luckfox"
+echo "Edited by https://github.com/B-Dem"
 echo ""
-echo "credit to:"
-echo "https://github.com/TheOfficialFloW/PPPwn"
+echo "Credit :"
+echo "TheFl0w for Original PPPwn Exploit"
+echo "https://github.com/TheOfficialFlow/PPPwn"
+echo "Xfangfang for PPPwn_CPP"
 echo "https://github.com/xfangfang/PPPwn_cpp"
-echo ""
 
 # Display the list of firmware versions
 echo "Please select your PS4 firmware version:"
-echo "a) 9.00"
-echo "b) 9.60"
-echo "c) 10.00"
-echo "d) 10.01"
-echo "e) 11.00"
+echo "1) 9.00"
+echo "2) 9.60"
+echo "3) 10.00"
+echo "4) 10.01"
+echo "5) 11.00"
 echo ""
 # Prompt the user for the selection
-read -p "Enter your choice (a/b/c/d/e): " FW_CHOICE
+read -p "Enter your choice (1/2/3/4/5): " FW_CHOICE
 
 # Set the firmware version based on the user's choice
 declare -A fw_versions=(
-    [a]="900"
-	[b]="960"
-    [c]="1000"
-    [d]="1001"
-    [e]="1100"
+    [1]="900"
+	[2]="960"
+    [3]="1000"
+    [4]="1001"
+    [5]="1100"
 )
 
 FW_VERSION=${fw_versions[$FW_CHOICE]}
@@ -48,7 +51,7 @@ if [ -z "$FW_VERSION" ]; then
 fi
 
 # Confirm the firmware version selection
-echo "You have selected firmware version $FW_VERSION. Is this correct? (y/n)"
+echo "You have selected firmware $FW_VERSION. Is this correct? (y/n)"
 read -p "Enter your choice: " CONFIRMATION
 
 if [[ $CONFIRMATION != "y" ]]; then
@@ -89,13 +92,13 @@ cd /home/pico/PPPwn-Luckfox/
 
 # Check if the pppwn command was successful
 if [ \$? -eq 0 ]; then
-    echo "pppwn execution completed successfully."
+    echo "PPPwn successfully executed !"
     sleep 10
     ifconfig eth0 down
 	sleep 5
 	systemctl halt
 else
-    echo "pppwn execution failed. Exiting script."
+    echo "PPPwn execution failed ! Exiting script."
     exit 1
 fi
 EOL
@@ -123,6 +126,6 @@ sudo mv pppwn.service /etc/systemd/system/
 sudo chmod +x /etc/systemd/system/pppwn.service
 sudo systemctl enable pppwn.service
 
-echo "install completed! rebooting..."
+echo "Install completed! Rebooting..."
 
 sudo reboot
