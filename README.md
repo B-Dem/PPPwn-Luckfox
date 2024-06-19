@@ -108,7 +108,7 @@ sudo ./install.sh
 
 When the Luckfox will reboot it will be updated to the last version
 
-## * Special Note for Luckfox Pico/Mini
+## * Special Note for Luckfox Pico/Mini :
 Ignore this if you use Pro/Max/Plus version. 
 For these 2 boards, there's no Ethernet port, to make it work you need to solder the LAN Port (RJ45) cable to it, either female or male is fine.
 
