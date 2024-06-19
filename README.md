@@ -4,9 +4,9 @@
 
 
 
-- Original work by theflow <a href=https://github.com/TheOfficialFloW/PPPwn>PPPwn</a>. 
+- Original work by <a href=https://github.com/TheOfficialFloW/PPPwn>Thefl0w</a>. 
 
-- Thanks to xfangfang for <a href=https://github.com/xfangfang/PPPwn_cpp>PPPwn-CPP</a> an executable re-write of PPPwn in C++ for Cortex-A7 compatible with Luckfox Pico Boards.
+- Thanks to xfangfang for <a href=https://github.com/xfangfang/PPPwn_cpp>PPPwn-CPP</a>, an executable re-write of PPPwn in C++ compatible with Luckfox Pico Boards.
 
 - Thanks to SiSTRo for his <a href=https://github.com/GoldHEN/GoldHEN>GoldHen</a> releases. 
 
@@ -49,6 +49,7 @@ The goal here is to setup the Luckfox pico to automatically try and jailbreak th
 ## Firmware Installation :
 
 1. Download your Firmware <a href=https://drive.google.com/drive/folders/1r6Ulc_crJar1entKbK7GEJSq14HXL8ao>Here</a> 
+
 After you download, extract one of the zip files according to your Luckfox Pico models. <br>
 
 2. Now Download <a href=https://drive.google.com/file/d/1ALo4G7rEaF1GNhUHINoYHT_RGWGddzYw>SocToolKit</a>, unzip it and open `SocToolKit.exe`.
