@@ -63,21 +63,20 @@ Luckfox Pico Pro/Max  | RV1106
 Luckfox Pico/Plus/Mini  | RV1103 
 
 4. Now you need to Flash your SD Card: <br>
-  a. In SocToolKit select `SDtool`.<br>
-  b. Plug your SD card in your Computer and select it in the `Usb Disk` drop down menu.<br>
-  c. Select SD card booting.<br>
-  d. Import all the `.img` file from the Firmware you Downloaded earlier except the `update.img`.<br>
-  e. Click on `Create SD Card`.<br>
+  a. In **SocToolKit** select `SDtool`.<br>
+  b. Plug your **SD card** in your **Computer** and select it in the `Usb Disk` **drop down menu**.<br>
+  c. Import all the `.img` file from the Firmware you Downloaded earlier except the `update.img`.<br>
+  d. Click on `Create SD Card`.<br>
 
 
-5. After done, eject your SD card and place it into the Luckfox, power it using USB Type-C, and connect it to the internet by plugging the LAN cable into your router.<br> 
+5. After done, eject your **SD card** and place it into the Luckfox. Power it using USB Type-C, and connect it to the internet by plugging the LAN cable into your router.<br> 
 6. To loggin to your Luckfox:
 
       You need to log in using SSH: 
       Normally the Luckfox will setup a static IP that will be : 172.32.0.70
       Now open cmd and type : `ssh pico@172.32.0.70`
 
-Login Details :
+**Login Details :**
 
 ```sh
 Login: pico
